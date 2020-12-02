@@ -1,9 +1,9 @@
 version: '3'
 services:
-  pricing_data:
-    container_name: pricing_data
+  flask:
+    container_name: flask
     build:
-      context: ./pricing_data
+      context: ./flask
     ports:
       - "5000:5000"
     depends_on:
@@ -31,4 +31,4 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - pricing_data
+      - flask
